@@ -1,0 +1,21 @@
+* {
+   font-family: 'Roboto', sans-serif;
+   text-decoration: none;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   border: none;
+   outline: none;
+   color: #fff;
+   background: transparent;
+}
+
+body {
+   background: #111;
+   display: flex;
+   justify-content: center;
+   min-height: 100vh;
+}
+
+button {cursor: pointer;}
+input {color: #111;}

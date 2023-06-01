@@ -1,0 +1,11 @@
+$index: calc(1vw + 1vh);
+$clr-yellow: #FFEB3B;
+%d-f {
+   display: flex;
+   align-items: center;
+}
+%d-f-c {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}

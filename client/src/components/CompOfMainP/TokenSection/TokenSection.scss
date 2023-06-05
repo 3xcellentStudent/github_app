@@ -1,0 +1,71 @@
+@import '../../../instrumentsSCSS/instruments.scss';
+
+section.token {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .info-container {
+        font-size: calc($index * 1.15); 
+    }
+
+    .token-form {
+        display: flex;
+        margin: calc($index * 2) 0 0;
+
+        .input-wrapper {
+            padding: calc($index / 2) $index calc($index / 2 - 2px);
+            background: $clr-yellow;
+            border-radius: calc($index / 3);
+            border-bottom: 2px solid transparent;
+            min-width: calc($index * 23);
+            transition: .2s;
+    
+            input {
+                width: 100%;
+                font-size: $index;
+                font-weight: 700;
+                &::placeholder {color: #111;}
+            }
+    
+            &.empty {
+                background: transparent;
+                border-radius: 0;
+                border-bottom: 2px solid $clr-yellow;
+                input {color: $clr-yellow;}
+            }
+
+            &.complete {
+                border-radius: 0;
+                border-color: $clr-green;
+                background: transparent;
+
+                input {color: $clr-green;}
+            }
+        }
+
+        .token-save {
+            color: $clr-yellow;
+            font-size: $index;
+            margin: 0 0 0 calc($index * 2);
+            border: 2px solid $clr-yellow;
+            border-radius: calc($index);
+            background: transparent;
+            padding: 0 $index;
+            transition: .2s;
+
+            &:hover {
+                color: #111;
+                background: $clr-yellow;
+                border-radius: calc($index / 3);
+            }
+
+            &.complete {
+                color: #111;
+                background: $clr-green;
+                border-color: $clr-green;
+            }
+        }
+    }
+}

@@ -5,12 +5,13 @@ const TokenSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'User'
    },
-   date: {
-      type: Number,
-   },
    refreshToken: {
       type: String,
       required: true
+   },
+   gitToken: {
+      type: String,
+      default: ''
    }
 })
 

@@ -12,7 +12,7 @@ class UserController{
       try {
          const activationLink = req.params.link
          await UserService.activate(activationLink)
-         return res.redirect(process.env.CLIENT_URL)
+         return res.redirect(`${process.env.CLIENT_URL}/login`)
       } catch(err){console.log(err)}
    }
 
@@ -27,7 +27,7 @@ class UserController{
 
    async logout(req, res){
       try {
-         const {refreshToken} = req.cookies
+         const refreshToken = req.rawHeaders.filter(item => item.includes('refreshToken'))[0].split('=')[1]
          const token = await UserService.logout(refreshToken)
          res.clearCookie('refreshToken')
          return res.json(token)
@@ -45,7 +45,6 @@ class UserController{
    async recoveryPass(req, res){
       try {
          const {email, password} = req.body
-         console.log(email, password)
          const user = await UserService.recovery(email, password)
          return res.json(user)
       } catch (err){console.log(err)}

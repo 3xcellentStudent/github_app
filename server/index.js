@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const router = require('./routes/router.js')
-
 const app = express()
 app.use(cors({
    credentials: true, origin: process.env.CLIENT_URL

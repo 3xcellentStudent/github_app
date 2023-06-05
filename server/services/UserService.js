@@ -66,7 +66,6 @@ class UserService{
          }
 
          const code = random()
-
          await mailService.sendLetterResetPass(email, code)
 
          return {code: code}
@@ -79,7 +78,7 @@ class UserService{
          await HashService.scryptHash(password)
          .then(hashed => hashedPassword = hashed)
          
-         const user = await UserModel.findOneAndUpdate(email, {password: hashedPassword})
+         const user = await UserModel.findOneAndUpdate({email}, {password: hashedPassword})
          return user
       } catch (err){console.log(err)}
    }

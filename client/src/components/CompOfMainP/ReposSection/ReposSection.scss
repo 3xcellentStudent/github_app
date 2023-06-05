@@ -1,0 +1,69 @@
+@import '../../../instrumentsSCSS/instruments.scss';
+
+section.repos {.window {width: 100%;}}
+
+.repo-container {
+    border-radius: $index;
+    padding: calc($index) calc($index * 3);
+    box-shadow: 0 0 2px 2px rgba(#fff, .1);
+    margin: 0 0 $index;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            transition: .2s;
+            text-decoration: underline;
+            font-size: $index;
+
+            &:hover {color: $clr-green;}
+        }
+
+        .d-f-50 {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .other-info {
+        width: 40%;
+        margin: $index auto 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .d-f {
+        display: flex;
+        align-items: center;
+    }
+
+    .link {
+        transition: .2s;
+        color: $clr-yellow;
+        
+        &:hover {
+            color: $clr-green;
+            text-decoration: underline;
+        }
+    }
+
+    .svg-container {
+        position: relative;
+        width: $index;
+        height: $index;
+        margin: 0 calc($index / 2) 0 0;
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

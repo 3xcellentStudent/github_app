@@ -1,0 +1,53 @@
+@import '../../instrumentsSCSS/instruments.scss';
+
+section.main {
+    margin: calc($index * 6) 0 0;
+    width: calc(100vw - $index * 6);
+    display: flex;
+    justify-content: center;
+
+    &:last-child {margin: calc($index * 6) 0 calc($index * 2);}
+
+    &.token {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .info-container {
+            font-size: calc($index * 1.15); 
+        }
+
+        .input-wrapper {
+            padding: calc($index / 2) $index calc($index / 2 - 2px);
+            background: $clr-yellow;
+            border-radius: calc($index / 3);
+            border-bottom: 2px solid transparent;
+            min-width: calc($index * 23);
+            transition: .2s;
+
+            input {
+                width: 100%;
+                font-size: $index;
+                font-weight: 700;
+                &::placeholder {color: #111;}
+            }
+
+            &.empty {
+                background: transparent;
+                border-radius: 0;
+                border-bottom: 2px solid $clr-yellow;
+                input {color: $clr-yellow;}
+            }
+        }
+    }
+}
+
+.container {
+    color: #fff;
+}
+
+.link-create-token {
+    color: $clr-green;
+    font-size: calc($index * 1.15);
+    &:hover {text-decoration: underline;}
+}

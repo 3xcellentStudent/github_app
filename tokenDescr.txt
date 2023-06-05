@@ -1,2 +1,0 @@
-New personal access token (classic)
-https://github.com/settings/tokens/new
